@@ -1,5 +1,4 @@
 from flask import Flask, request
-import os
 from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
@@ -15,8 +14,6 @@ def whatsapp_webhook():
 
     resp = MessagingResponse()
     msg = resp.message()
-
-    # Simple reply
     msg.body("This is GoalGenieBot powered by Sip Wealth 🤖\nHow can I help you with your mutual fund goals today?")
 
     return str(resp)
